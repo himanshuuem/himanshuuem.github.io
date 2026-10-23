@@ -138,6 +138,17 @@ h1{font:800 clamp(72px,11vw,148px)/.9 var(--display);color:var(--ink);margin:0;l
 .project .tags{margin-top:auto;padding-top:18px}
 .note{font:12.5px var(--mono);color:var(--muted);margin-top:22px}
 
+/* web builds */
+.project .links{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;font:13px var(--mono);letter-spacing:.5px}
+.project .links a::after{content:" ↗"}
+.index{margin-top:18px}
+.index .date.wrapline{margin:0 0 22px;line-height:1.7}
+.index .group+.group{margin-top:22px}
+.index .tags a{color:var(--ink)}
+.index .tags a:hover{color:var(--blue-soft);text-decoration:none}
+.index .tags li:has(a:hover){border-color:var(--blue)}
+.index .tags small{color:var(--muted);font-size:11px}
+
 /* skills + education */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .group+.group{margin-top:26px}
@@ -199,6 +210,7 @@ footer{padding:28px 0 40px;font:12.5px var(--mono);color:var(--muted);text-align
         <li><a href="#research">Research</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#builds">Builds</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -340,15 +352,76 @@ footer{padding:28px 0 40px;font:12.5px var(--mono);color:var(--muted);text-align
   </div>
 </section>
 
+<section id="builds">
+  <div class="wrap">
+    <p class="kicker"><b>04</b> / Web builds</p>
+    <h2>FULL-STACK, END TO END.</h2>
+    <div class="grid">
+      <article class="card project">
+        <header><h3>Whisper</h3><span class="date">2026</span></header>
+        <p>Anonymous confessions board with production-style auth: bcrypt hashing, PostgreSQL-backed sessions, Passport.js (email + Google OAuth 2.0), CSRF tokens, rate-limited logins and authorisation enforced in SQL.</p>
+        <p class="hl">Cross-user delete blocked in SQL, not just hidden in the UI</p>
+        <p class="links"><a href="https://whisper-rfuo.onrender.com/">Live demo</a><a href="https://github.com/himanshuuem/whisper">Code</a></p>
+        <ul class="tags"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Passport</li><li>bcrypt</li><li>CSRF</li></ul>
+      </article>
+      <article class="card project">
+        <header><h3>API Auth Lab</h3><span class="date">2026</span></header>
+        <p>A provider and consumer in one app: a Secrets API issuing scrypt-hashed accounts, API keys and HMAC-signed expiring tokens, plus an axios client that shows each request with secrets masked.</p>
+        <p class="hl">None · Basic · API key · Bearer, all timing-safe</p>
+        <p class="links"><a href="https://api-auth-lab.onrender.com/">Live demo</a><a href="https://github.com/himanshuuem/api-auth-lab">Code</a></p>
+        <ul class="tags"><li>Express</li><li>axios</li><li>HMAC</li><li>scrypt</li><li>REST</li></ul>
+      </article>
+      <article class="card project">
+        <header><h3>SkyCast</h3><span class="date">2026</span></header>
+        <p>Ad-free weather on the Open-Meteo API: city search with disambiguation, geolocation, a server-rendered SVG hourly chart, 7-day forecast and a sky that changes with the conditions.</p>
+        <p class="hl">TTL cache + injectable HTTP client for offline tests</p>
+        <p class="links"><a href="https://skycast-icru.onrender.com/">Live demo</a><a href="https://github.com/himanshuuem/skycast">Code</a></p>
+        <ul class="tags"><li>Express</li><li>EJS</li><li>axios</li><li>SVG</li><li>Open-Meteo</li></ul>
+      </article>
+      <article class="card project">
+        <header><h3>ShelfNotes</h3><span class="date">2026</span></header>
+        <p>Personal reading log: search Open Library to add a book, real cover art, 1–10 ratings, long-form notes, and full-text search across titles, authors and notes.</p>
+        <p class="hl">DB-level CHECK + UNIQUE constraints, 422/409 handled</p>
+        <p class="links"><a href="https://shelfnotes.onrender.com/">Live demo</a><a href="https://github.com/himanshuuem/shelfnotes">Code</a></p>
+        <ul class="tags"><li>PostgreSQL</li><li>Express</li><li>EJS</li><li>Open Library API</li></ul>
+      </article>
+      <article class="card project">
+        <header><h3>NoteNest</h3><span class="date">2026</span></header>
+        <p>Google Keep-style notes in React 19: expanding composer, colours, pin/archive, #hashtag labels, live search, masonry layout and undo-delete that restores in place.</p>
+        <p class="hl">Pure reducer + memoised selectors, 8 Vitest tests</p>
+        <p class="links"><a href="https://himanshuuem.github.io/notenest/">Live demo</a><a href="https://github.com/himanshuuem/notenest">Code</a></p>
+        <ul class="tags"><li>React 19</li><li>useReducer</li><li>Vite</li><li>Vitest</li></ul>
+      </article>
+      <article class="card project">
+        <header><h3>DevLog</h3><span class="date">2026</span></header>
+        <p>Markdown blog engine with full CRUD, tags and search. HTML is sanitised so posts can't inject scripts, and writes are atomic (temp file + rename).</p>
+        <p class="hl">Optional Basic-auth admin for public deploys</p>
+        <p class="links"><a href="https://devlog-fhwp.onrender.com/">Live demo</a><a href="https://github.com/himanshuuem/devlog">Code</a></p>
+        <ul class="tags"><li>Express</li><li>EJS</li><li>Markdown</li><li>sanitize-html</li></ul>
+      </article>
+    </div>
+    <div class="card index">
+      <p class="date wrapline">ALL 28 BUILDS · EVERY ONE OPEN SOURCE, MOST WITH TESTS IN GITHUB ACTIONS · CLICK A NAME FOR THE LIVE DEMO</p>
+        <div class="group"><h4>Front-end · HTML &amp; CSS</h4><ul class="tags"><li><a href="https://himanshuuem.github.io/cinelist/">CineList</a></li><li><a href="https://himanshuuem.github.io/rsvp-card/">RSVP Card</a></li><li><a href="https://himanshuuem.github.io/terminal-folio/">terminal-folio</a></li><li><a href="https://himanshuuem.github.io/hue-lexicon/">Hue Lexicon</a></li><li><a href="https://himanshuuem.github.io/daily-spark/">Daily Spark</a></li><li><a href="https://himanshuuem.github.io/studio-nine/">Studio Nine</a></li><li><a href="https://himanshuuem.github.io/tierup/">TierUp</a></li><li><a href="https://himanshuuem.github.io/bento-grid/">Bento Grid</a></li></ul></div>
+        <div class="group"><h4>Bootstrap · JavaScript · jQuery</h4><ul class="tags"><li><a href="https://himanshuuem.github.io/petpulse/">PetPulse</a></li><li><a href="https://himanshuuem.github.io/dev-portfolio/">dev-portfolio</a></li><li><a href="https://himanshuuem.github.io/js-katas/">JS Katas</a></li><li><a href="https://himanshuuem.github.io/critical-roll/">Critical Roll</a></li><li><a href="https://himanshuuem.github.io/beatpad/">BeatPad</a></li><li><a href="https://himanshuuem.github.io/echo-pulse/">Echo Pulse</a></li></ul></div>
+        <div class="group"><h4>Node · Express · APIs</h4><ul class="tags"><li><a href="https://github.com/himanshuuem/qrforge">QRForge</a> <small>CLI</small></li><li><a href="https://vault-gate-r4kh.onrender.com/">Vault Gate</a></li><li><a href="https://name-forge.onrender.com/">Name Forge</a></li><li><a href="https://devlog-fhwp.onrender.com/">DevLog</a></li><li><a href="https://api-auth-lab.onrender.com/">API Auth Lab</a></li><li><a href="https://skycast-icru.onrender.com/">SkyCast</a></li></ul></div>
+        <div class="group"><h4>PostgreSQL · Authentication</h4><ul class="tags"><li><a href="https://geoquest-z4hm.onrender.com/">GeoQuest</a></li><li><a href="https://wanderlog-5ged.onrender.com/">Wanderlog</a></li><li><a href="https://taskflow-hnse.onrender.com/">TaskFlow</a></li><li><a href="https://shelfnotes.onrender.com/">ShelfNotes</a></li><li><a href="https://whisper-rfuo.onrender.com/">Whisper</a></li></ul></div>
+        <div class="group"><h4>React</h4><ul class="tags"><li><a href="https://himanshuuem.github.io/emojidex/">EmojiDex</a></li><li><a href="https://himanshuuem.github.io/focuslist/">FocusList</a></li><li><a href="https://himanshuuem.github.io/notenest/">NoteNest</a></li></ul></div>
+    </div>
+    <p class="note">Built from scratch while working through a full-stack web development bootcamp. Code, READMEs and test suites are on <a href="https://github.com/himanshuuem">GitHub</a>. Server apps run on Render’s free tier and may take ~30–60 s to wake up.</p>
+  </div>
+</section>
+
 <section id="skills">
   <div class="wrap">
-    <p class="kicker"><b>04</b> / Skills &amp; education</p>
+    <p class="kicker"><b>05</b> / Skills &amp; education</p>
     <h2>TOOLKIT.</h2>
     <div class="two">
       <div class="card">
         <div class="group"><h4>Languages</h4><ul class="tags"><li>Python</li><li>C++</li><li>Java</li><li>Bash</li><li>MySQL</li><li>LaTeX</li></ul></div>
         <div class="group"><h4>AI &amp; agents</h4><ul class="tags"><li>Claude</li><li>MCP</li><li>Agentic tool calling</li><li>RAG</li><li>LangChain</li><li>Evals</li><li>Ollama</li><li>Qwen3</li></ul></div>
         <div class="group"><h4>ML / NLP</h4><ul class="tags"><li>scikit-learn</li><li>Keras</li><li>NumPy</li><li>Matplotlib</li><li>Transformers</li><li>TF-IDF</li><li>Word2Vec</li><li>BoW</li></ul></div>
+        <div class="group"><h4>Web</h4><ul class="tags"><li>JavaScript (ES2023)</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>React</li><li>EJS</li><li>Bootstrap</li><li>Vitest</li><li>GitHub Actions</li><li>Render</li></ul></div>
         <div class="group"><h4>Infra &amp; tools</h4><ul class="tags"><li>Docker</li><li>Git</li><li>Jenkins</li><li>AWS</li><li>REST APIs</li><li>Wireshark</li><li>IBM Qiskit</li><li>wrk/wrk2</li><li>Agile</li></ul></div>
       </div>
       <div class="card">
@@ -370,7 +443,7 @@ footer{padding:28px 0 40px;font:12.5px var(--mono);color:var(--muted);text-align
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <p class="kicker"><b>05</b> / Contact</p>
+    <p class="kicker"><b>06</b> / Contact</p>
     <h2>LET’S BUILD SOMETHING.</h2>
     <p>Open to ML-engineering and security-ML internships and roles, research collaborations, and conversations about SIoT security or AI agents.</p>
     <div class="cta">
